@@ -1,0 +1,247 @@
+version 3
+run General-0-20230323-16:45:50-20716
+attr configname General
+attr datetime 20230323-16:45:50
+attr datetimef 20230323-164550
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network WAMPL
+attr processid 20716
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config cmdenv-output-file log.txt
+config network WAMPL
+config **.deviceNum 14
+config **.baseNum 3
+config **.id intuniform(1,10)
+config **.maxTransDist 3000
+config WAMPL.node[0].loraType 1
+config WAMPL.node[1].loraType 1
+config WAMPL.node[*].loraType 0
+config WAMPL.mapRange 11000
+config WAMPL.node[0].x "(parent.mapRange - parent.maxTransDist)/2 + uniform(0, 500)"
+config WAMPL.node[0].y "parent.mapRange*15/16 + uniform(0, 500)"
+config WAMPL.node[1].x "parent.node[0].x + parent.maxTransDist + uniform(0, 500)"
+config WAMPL.node[1].y "parent.mapRange*15/16 + uniform(0, 500)"
+config WAMPL.node[2].y "(parent.node[0].y + parent.node[1].y)/parent.two - sqrt((pow(parent.maxTransDist,parent.two) - (pow(parent.node[1].x - parent.node[0].x, parent.two) + pow(parent.node[1].y - parent.node[0].y, parent.two))/parent.four)*pow(parent.node[1].x-parent.node[0].x,parent.two)/(pow(parent.node[1].y-parent.node[0].y, parent.two) + pow(parent.node[1].x - parent.node[0].x, parent.two))) + uniform(0, 500)"
+config WAMPL.node[2].x "(parent.node[0].y - parent.node[1].y)/(parent.node[1].x -parent.node[0].x)*(parent.node[2].y - (parent.node[0].y + parent.node[1].y)/parent.two) + (parent.node[0].x + parent.node[1].x)/parent.two"
+config WAMPL.node[3].y "(parent.node[0].y + parent.node[2].y)/parent.two - sqrt((pow(parent.maxTransDist,parent.two) - (pow(parent.node[2].x - parent.node[0].x, parent.two) + pow(parent.node[2].y - parent.node[0].y, parent.two))/parent.four)*pow(parent.node[2].x-parent.node[0].x,parent.two)/(pow(parent.node[2].y-parent.node[0].y, parent.two) + pow(parent.node[2].x - parent.node[0].x, parent.two))) + uniform(0, 500)"
+config WAMPL.node[3].x "(parent.node[0].y - parent.node[2].y)/(parent.node[2].x -parent.node[0].x)*(parent.node[3].y - (parent.node[0].y + parent.node[2].y)/parent.two) + (parent.node[0].x + parent.node[2].x)/parent.two"
+config WAMPL.node[4].y "(parent.node[2].y + parent.node[1].y)/parent.two - sqrt((pow(parent.maxTransDist,parent.two) - (pow(parent.node[1].x - parent.node[2].x, parent.two) + pow(parent.node[1].y - parent.node[2].y, parent.two))/parent.four)*pow(parent.node[1].x-parent.node[2].x,parent.two)/(pow(parent.node[1].y-parent.node[2].y, parent.two) + pow(parent.node[1].x - parent.node[2].x, parent.two))) + uniform(0, 500)"
+config WAMPL.node[4].x "(parent.node[2].y - parent.node[1].y)/(parent.node[1].x -parent.node[2].x)*(parent.node[4].y - (parent.node[2].y + parent.node[1].y)/parent.two) + (parent.node[2].x + parent.node[1].x)/parent.two"
+config WAMPL.node[5].y "(parent.node[3].y + parent.node[2].y)/parent.two - sqrt((pow(parent.maxTransDist,parent.two) - (pow(parent.node[2].x - parent.node[3].x, parent.two) + pow(parent.node[2].y - parent.node[3].y, parent.two))/parent.four)*pow(parent.node[2].x-parent.node[3].x,parent.two)/(pow(parent.node[2].y-parent.node[3].y, parent.two) + pow(parent.node[2].x - parent.node[3].x, parent.two))) + uniform(0, 500)"
+config WAMPL.node[5].x "(parent.node[3].y - parent.node[2].y)/(parent.node[2].x -parent.node[3].x)*(parent.node[5].y - (parent.node[3].y + parent.node[2].y)/parent.two) + (parent.node[3].x + parent.node[2].x)/parent.two"
+config WAMPL.node[6].y "(parent.node[2].y + parent.node[4].y)/parent.two - sqrt((pow(parent.maxTransDist,parent.two) - (pow(parent.node[4].x - parent.node[2].x, parent.two) + pow(parent.node[4].y - parent.node[2].y, parent.two))/parent.four)*pow(parent.node[4].x-parent.node[2].x,parent.two)/(pow(parent.node[4].y-parent.node[2].y, parent.two) + pow(parent.node[4].x - parent.node[2].x, parent.two))) + uniform(0, 500)"
+config WAMPL.node[6].x "(parent.node[2].y - parent.node[4].y)/(parent.node[4].x -parent.node[2].x)*(parent.node[6].y - (parent.node[2].y + parent.node[4].y)/parent.two) + (parent.node[2].x + parent.node[4].x)/parent.two"
+config WAMPL.node[7].y "(parent.node[3].y + parent.node[5].y)/parent.two - sqrt((pow(parent.maxTransDist,parent.two) - (pow(parent.node[5].x - parent.node[3].x, parent.two) + pow(parent.node[5].y - parent.node[3].y, parent.two))/parent.four)*pow(parent.node[5].x-parent.node[3].x,parent.two)/(pow(parent.node[5].y-parent.node[3].y, parent.two) + pow(parent.node[5].x - parent.node[3].x, parent.two))) + uniform(0, 500)"
+config WAMPL.node[7].x "(parent.node[3].y - parent.node[5].y)/(parent.node[5].x -parent.node[3].x)*(parent.node[7].y - (parent.node[3].y + parent.node[5].y)/parent.two) + (parent.node[3].x + parent.node[5].x)/parent.two"
+config WAMPL.node[8].y "(parent.node[6].y + parent.node[4].y)/parent.two - sqrt((pow(parent.maxTransDist,parent.two) - (pow(parent.node[4].x - parent.node[6].x, parent.two) + pow(parent.node[4].y - parent.node[6].y, parent.two))/parent.four)*pow(parent.node[4].x-parent.node[6].x,parent.two)/(pow(parent.node[4].y-parent.node[6].y, parent.two) + pow(parent.node[4].x - parent.node[6].x, parent.two))) + uniform(0, 500)"
+config WAMPL.node[8].x "(parent.node[6].y - parent.node[4].y)/(parent.node[4].x -parent.node[6].x)*(parent.node[8].y - (parent.node[6].y + parent.node[4].y)/parent.two) + (parent.node[6].x + parent.node[4].x)/parent.two"
+config WAMPL.node[9].y "(parent.node[7].y + parent.node[5].y)/parent.two - sqrt((pow(parent.maxTransDist,parent.two) - (pow(parent.node[5].x - parent.node[7].x, parent.two) + pow(parent.node[5].y - parent.node[7].y, parent.two))/parent.four)*pow(parent.node[5].x-parent.node[7].x,parent.two)/(pow(parent.node[5].y-parent.node[7].y, parent.two) + pow(parent.node[5].x - parent.node[7].x, parent.two))) + uniform(0, 500)"
+config WAMPL.node[9].x "(parent.node[7].y - parent.node[5].y)/(parent.node[5].x -parent.node[7].x)*(parent.node[9].y - (parent.node[7].y + parent.node[5].y)/parent.two) + (parent.node[7].x + parent.node[5].x)/parent.two"
+config WAMPL.node[10].y "(parent.node[5].y + parent.node[6].y)/parent.two - sqrt((pow(parent.maxTransDist,parent.two) - (pow(parent.node[6].x - parent.node[5].x, parent.two) + pow(parent.node[6].y - parent.node[5].y, parent.two))/parent.four)*pow(parent.node[6].x-parent.node[5].x,parent.two)/(pow(parent.node[6].y-parent.node[5].y, parent.two) + pow(parent.node[6].x - parent.node[5].x, parent.two))) + uniform(0, 500)"
+config WAMPL.node[10].x "(parent.node[5].y - parent.node[6].y)/(parent.node[6].x -parent.node[5].x)*(parent.node[10].y - (parent.node[5].y + parent.node[6].y)/parent.two) + (parent.node[5].x + parent.node[6].x)/parent.two"
+config WAMPL.node[11].y "(parent.node[6].y + parent.node[8].y)/parent.two - sqrt((pow(parent.maxTransDist,parent.two) - (pow(parent.node[8].x - parent.node[6].x, parent.two) + pow(parent.node[8].y - parent.node[6].y, parent.two))/parent.four)*pow(parent.node[8].x-parent.node[6].x,parent.two)/(pow(parent.node[8].y-parent.node[6].y, parent.two) + pow(parent.node[8].x - parent.node[6].x, parent.two))) + uniform(0, 500)"
+config WAMPL.node[11].x "(parent.node[6].y - parent.node[8].y)/(parent.node[8].x -parent.node[6].x)*(parent.node[11].y - (parent.node[6].y + parent.node[8].y)/parent.two) + (parent.node[6].x + parent.node[8].x)/parent.two"
+config WAMPL.node[12].y "(parent.node[7].y + parent.node[9].y)/parent.two - sqrt((pow(parent.maxTransDist,parent.two) - (pow(parent.node[9].x - parent.node[7].x, parent.two) + pow(parent.node[9].y - parent.node[7].y, parent.two))/parent.four)*pow(parent.node[9].x-parent.node[7].x,parent.two)/(pow(parent.node[9].y-parent.node[7].y, parent.two) + pow(parent.node[9].x - parent.node[7].x, parent.two))) + uniform(0, 500)"
+config WAMPL.node[12].x "(parent.node[7].y - parent.node[9].y)/(parent.node[9].x -parent.node[7].x)*(parent.node[12].y - (parent.node[7].y + parent.node[9].y)/parent.two) + (parent.node[7].x + parent.node[9].x)/parent.two"
+config WAMPL.node[13].y "(parent.node[11].y + parent.node[8].y)/parent.two - sqrt((pow(parent.maxTransDist,parent.two) - (pow(parent.node[8].x - parent.node[11].x, parent.two) + pow(parent.node[8].y - parent.node[11].y, parent.two))/parent.four)*pow(parent.node[8].x-parent.node[11].x,parent.two)/(pow(parent.node[8].y-parent.node[11].y, parent.two) + pow(parent.node[8].x - parent.node[11].x, parent.two))) + uniform(0, 500)"
+config WAMPL.node[13].x "(parent.node[11].y - parent.node[8].y)/(parent.node[8].x -parent.node[11].x)*(parent.node[13].y - (parent.node[11].y + parent.node[8].y)/parent.two) + (parent.node[11].x + parent.node[8].x)/parent.two"
+
+par WAMPL.node[0] typename "\"Node\""
+par WAMPL.node[0] x 4274.41
+par WAMPL.node[0] y 10608.9
+par WAMPL.node[0] id 6
+par WAMPL.node[0] loraType 1
+par WAMPL.node[0] deviceNum 14
+par WAMPL.node[0] maxTransDist 3000
+par WAMPL.node[0] ifDead false
+attr mutable ""
+par WAMPL.node[0] fatherID -2
+attr mutable ""
+par WAMPL.node[0] battery 66.6
+attr mutable ""
+par WAMPL.node[1] typename "\"Node\""
+par WAMPL.node[1] x 7696.54
+par WAMPL.node[1] y 10613.9
+par WAMPL.node[1] id 4
+par WAMPL.node[1] loraType 1
+par WAMPL.node[1] deviceNum 14
+par WAMPL.node[1] maxTransDist 3000
+par WAMPL.node[1] ifDead false
+attr mutable ""
+par WAMPL.node[1] fatherID -2
+attr mutable ""
+par WAMPL.node[1] battery 66.6
+attr mutable ""
+par WAMPL.node[2] typename "\"Node\""
+par WAMPL.node[2] x 5988.43
+par WAMPL.node[2] y 8359.04
+par WAMPL.node[2] id 4
+par WAMPL.node[2] loraType 0
+par WAMPL.node[2] deviceNum 14
+par WAMPL.node[2] maxTransDist 3000
+par WAMPL.node[2] ifDead false
+attr mutable ""
+par WAMPL.node[2] fatherID 1
+attr mutable ""
+par WAMPL.node[2] battery 3.25403
+attr mutable ""
+par WAMPL.node[3] typename "\"Node\""
+par WAMPL.node[3] x 3450.73
+par WAMPL.node[3] y 8072.83
+par WAMPL.node[3] id 5
+par WAMPL.node[3] loraType 0
+par WAMPL.node[3] deviceNum 14
+par WAMPL.node[3] maxTransDist 3000
+par WAMPL.node[3] ifDead false
+attr mutable ""
+par WAMPL.node[3] fatherID 0
+attr mutable ""
+par WAMPL.node[3] battery 3.31437
+attr mutable ""
+par WAMPL.node[4] typename "\"Node\""
+par WAMPL.node[4] x 8754.98
+par WAMPL.node[4] y 8334.81
+par WAMPL.node[4] id 9
+par WAMPL.node[4] loraType 0
+par WAMPL.node[4] deviceNum 14
+par WAMPL.node[4] maxTransDist 3000
+par WAMPL.node[4] ifDead false
+attr mutable ""
+par WAMPL.node[4] fatherID 1
+attr mutable ""
+par WAMPL.node[4] battery 3.25407
+attr mutable ""
+par WAMPL.node[5] typename "\"Node\""
+par WAMPL.node[5] x 4969.48
+par WAMPL.node[5] y 5654.68
+par WAMPL.node[5] id 2
+par WAMPL.node[5] loraType 0
+par WAMPL.node[5] deviceNum 14
+par WAMPL.node[5] maxTransDist 3000
+par WAMPL.node[5] ifDead false
+attr mutable ""
+par WAMPL.node[5] fatherID 2
+attr mutable ""
+par WAMPL.node[5] battery 3.268
+attr mutable ""
+par WAMPL.node[6] typename "\"Node\""
+par WAMPL.node[6] x 7351.86
+par WAMPL.node[6] y 6091.08
+par WAMPL.node[6] id 8
+par WAMPL.node[6] loraType 0
+par WAMPL.node[6] deviceNum 14
+par WAMPL.node[6] maxTransDist 3000
+par WAMPL.node[6] ifDead false
+attr mutable ""
+par WAMPL.node[6] fatherID 4
+attr mutable ""
+par WAMPL.node[6] battery 3.24285
+attr mutable ""
+par WAMPL.node[7] typename "\"Node\""
+par WAMPL.node[7] x 2357.88
+par WAMPL.node[7] y 5744.48
+par WAMPL.node[7] id 2
+par WAMPL.node[7] loraType 0
+par WAMPL.node[7] deviceNum 14
+par WAMPL.node[7] maxTransDist 3000
+par WAMPL.node[7] ifDead true
+attr mutable ""
+par WAMPL.node[7] fatherID -2
+attr mutable ""
+par WAMPL.node[7] battery 0.0001675
+attr mutable ""
+par WAMPL.node[8] typename "\"Node\""
+par WAMPL.node[8] x 9596.18
+par WAMPL.node[8] y 6203.41
+par WAMPL.node[8] id 9
+par WAMPL.node[8] loraType 0
+par WAMPL.node[8] deviceNum 14
+par WAMPL.node[8] maxTransDist 3000
+par WAMPL.node[8] ifDead true
+attr mutable ""
+par WAMPL.node[8] fatherID -2
+attr mutable ""
+par WAMPL.node[8] battery -8.25e-05
+attr mutable ""
+par WAMPL.node[9] typename "\"Node\""
+par WAMPL.node[9] x 3572.37
+par WAMPL.node[9] y 3324.73
+par WAMPL.node[9] id 4
+par WAMPL.node[9] loraType 0
+par WAMPL.node[9] deviceNum 14
+par WAMPL.node[9] maxTransDist 3000
+par WAMPL.node[9] ifDead false
+attr mutable ""
+par WAMPL.node[9] fatherID 5
+attr mutable ""
+par WAMPL.node[9] battery 3.28212
+attr mutable ""
+par WAMPL.node[10] typename "\"Node\""
+par WAMPL.node[10] x 6621.49
+par WAMPL.node[10] y 3589.4
+par WAMPL.node[10] id 6
+par WAMPL.node[10] loraType 0
+par WAMPL.node[10] deviceNum 14
+par WAMPL.node[10] maxTransDist 3000
+par WAMPL.node[10] ifDead false
+attr mutable ""
+par WAMPL.node[10] fatherID 6
+attr mutable ""
+par WAMPL.node[10] battery 3.31434
+attr mutable ""
+par WAMPL.node[11] typename "\"Node\""
+par WAMPL.node[11] x 8593.6
+par WAMPL.node[11] y 3439.25
+par WAMPL.node[11] id 1
+par WAMPL.node[11] loraType 0
+par WAMPL.node[11] deviceNum 14
+par WAMPL.node[11] maxTransDist 3000
+par WAMPL.node[11] ifDead false
+attr mutable ""
+par WAMPL.node[11] fatherID 6
+attr mutable ""
+par WAMPL.node[11] battery 3.28212
+attr mutable ""
+par WAMPL.node[12] typename "\"Node\""
+par WAMPL.node[12] x 1547.29
+par WAMPL.node[12] y 3570.47
+par WAMPL.node[12] id 9
+par WAMPL.node[12] loraType 0
+par WAMPL.node[12] deviceNum 14
+par WAMPL.node[12] maxTransDist 3000
+par WAMPL.node[12] ifDead false
+attr mutable ""
+par WAMPL.node[12] fatherID 9
+attr mutable ""
+par WAMPL.node[12] battery 3.31437
+attr mutable ""
+par WAMPL.node[13] typename "\"Node\""
+par WAMPL.node[13] x 10449.2
+par WAMPL.node[13] y 4160.41
+par WAMPL.node[13] id 4
+par WAMPL.node[13] loraType 0
+par WAMPL.node[13] deviceNum 14
+par WAMPL.node[13] maxTransDist 3000
+par WAMPL.node[13] ifDead false
+attr mutable ""
+par WAMPL.node[13] fatherID 11
+attr mutable ""
+par WAMPL.node[13] battery 3.31437
+attr mutable ""
+par WAMPL typename "\"WAMPL\""
+par WAMPL deviceNum 14
+par WAMPL baseNum 3
+par WAMPL mapRange 11000
+par WAMPL maxTransDist 3000
+par WAMPL two 2
+par WAMPL four 4
+
